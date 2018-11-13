@@ -11,7 +11,7 @@ class App extends Component {
           <h2>Spotifyx</h2>
         </div>
         <p className='App-intro'>
-          T-Series is big gay
+          T-Series is big gay.
         </p>
       </div>
     )
