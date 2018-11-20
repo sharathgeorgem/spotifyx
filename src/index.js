@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import Collections from './Collections'
 import './index.css'
 
 ReactDOM.render(
-  <App />,
+  <Collections />,
   document.getElementById('root')
 )

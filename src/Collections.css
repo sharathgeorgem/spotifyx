@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+.App ul .dynamic li{
+  color: brown;
+}
+
+.App ul .topHits li{
+  color: brown;
+}
+
+.App ul .playlist li{
+  color: brown;
+}
+
+.App ul .albums li{
+  color: brown;
+}
+
+.App ul .language li{
+  color: brown;
+}
