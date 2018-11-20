@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://sharathgeorgem.github.io/spotifyx",
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-hls": "0.0.8",
