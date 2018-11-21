@@ -1,0 +1,59 @@
+.songs {
+    border-radius: 5px;
+    background: linear-gradient(to bottom right, green, orange);
+    width: 150px;
+    height: 100px;
+    text-align: left;
+    display: inline-flex;
+    padding: 10px 5px 5px 10px;
+    margin: 10px 10px 10px 10px;
+    border: 0px 10px 0px 10px;
+}
+
+.Dynamic {
+    border-radius: 5px;
+    background: linear-gradient(to bottom right, blue, purple);
+    width: 150px;
+    height: 100px;
+    text-align: left;
+    display: inline-flex;
+    padding: 10px 5px 5px 10px;
+    margin: 10px 10px 10px 10px;
+    border: 0px 10px 0px 10px;
+}
+
+.playlist {
+    border-radius: 5px;
+    background: linear-gradient(to bottom right, orange, red);
+    width: 150px;
+    height: 100px;
+    text-align: left;
+    display: inline-flex;
+    padding: 10px 5px 5px 10px;
+    margin: 10px 10px 10px 10px;
+    border: 0px 10px 0px 10px;
+}
+
+.albums {
+    border-radius: 5px;
+    background: linear-gradient(to bottom right, purple, yellow);
+    width: 150px;
+    height: 100px;
+    text-align: left;
+    display: inline-flex;
+    padding: 10px 5px 5px 10px;
+    margin: 10px 10px 10px 10px;
+    border: 0px 10px 0px 10px;
+}
+
+.language {
+    border-radius: 5px;
+    background: linear-gradient(to bottom right, green, pink);
+    width: 150px;
+    height: 100px;
+    text-align: left;
+    display: inline-flex;
+    padding: 10px 5px 5px 10px;
+    margin: 10px 10px 10px 10px;
+    border: 0px 10px 0px 10px;
+}

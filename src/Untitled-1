@@ -1,0 +1,24 @@
+(<div className={item.type} key={item._id}>
+      <li>{item.name}</li>
+    </div>)
+
+const arrayToObject = (array) => {
+  console.log('INSIDE FN!!!!!')
+  const accumulator = {
+    Dynamic: [],
+    songs: [],
+    playlist: [],
+    albums: [],
+    language: []
+  }
+  return array.reduce((obj, item) => {
+    item._id = shortid.generate()
+    obj[item.type].push((<div className={item.type} key={item._id}>
+      <li>{item.name}</li>
+    </div>))
+    return obj
+  }, accumulator)
+}
+
+    const collectionObject = arrayToObject(this.state.songCollections)
+    console.log('The collection object is ', collectionObject)

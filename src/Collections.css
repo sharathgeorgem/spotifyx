@@ -1,23 +1,60 @@
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #00ff87; 
+}
+::-webkit-scrollbar-thumb {
+  background: #38003c; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 .App {
   text-align: center;
+  width: 80%;
 }
 
-.App ul .dynamic li{
-  color: brown;
+.App ul {
+  display: inline;
 }
 
-.App ul .topHits li{
-  color: brown;
+.App ul .Dynamic li{
+  color: white;
+  font-size: 20px;
+}
+
+.App ul .songs li{
+  color: white;
+  font-size: 20px;
 }
 
 .App ul .playlist li{
-  color: brown;
+  color: white;
+  font-size: 20px;
 }
 
 .App ul .albums li{
-  color: brown;
+  color: white;
+  font-size: 20px;
 }
 
 .App ul .language li{
-  color: brown;
+  color: white;
+  font-size: 20px;
+}
+
+.App h3 {
+  font-size: 50px;
+  display: block;
+  text-align: left;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border-color: aqua;
+}
+
+.list {
+  display: inline-block;
 }

@@ -2,7 +2,25 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './Collections.css'
 import shortid from 'shortid'
-// App
+import Card from './card'
+
+const arrayToObject = (array) => {
+  const accumulator = {
+    Dynamic: [],
+    songs: [],
+    playlist: [],
+    albums: [],
+    language: []
+  }
+  return array.reduce((obj, item) => {
+    item._id = shortid.generate()
+    obj[item.type].push((<div className={item.type} key={item._id}>
+      <li>{item.name}</li>
+    </div>))
+    return obj
+  }, accumulator)
+}
+// Collections
 class Collections extends Component {
   constructor (props) {
     super(props)
@@ -21,71 +39,33 @@ class Collections extends Component {
       })
   }
   render () {
-    let dynamic = this.state.songCollections.map(collection => {
-      collection._id = shortid.generate()
-      return collection.type === 'Dynamic'
-        ? (<div className='dynamic' key={collection._id}>
-          <li>{collection.name}</li>
-        </div>)
-        : (null)
-    })
-    let topHits = this.state.songCollections.map(collection => {
-      collection._id = shortid.generate()
-      return collection.type === 'songs'
-        ? (<div className='topHits' key={collection._id}>
-          <li>{collection.name}</li>
-        </div>)
-        : (null)
-    })
-    let playlist = this.state.songCollections.map(collection => {
-      collection._id = shortid.generate()
-      return collection.type === 'playlist'
-        ? (<div className='playlist' key={collection._id}>
-          <li>{collection.name}</li>
-        </div>)
-        : (null)
-    })
-    let albums = this.state.songCollections.map(collection => {
-      collection._id = shortid.generate()
-      return collection.type === 'albums'
-        ? (<div className='albums' key={collection._id}>
-          <li>{collection.name}</li>
-        </div>)
-        : (null)
-    })
-    let language = this.state.songCollections.map(collection => {
-      collection._id = shortid.generate()
-      return collection.type === 'language'
-        ? (<div className='language' key={collection._id}>
-          <li>{collection.name}</li>
-        </div>)
-        : (null)
-    })
+    const collectionObject = arrayToObject(this.state.songCollections)
+    console.log('The collection object is ', collectionObject)
     return (
       <div className='App'>
-        <h3>Dynamic</h3>
-        <ul>
-          {dynamic}
+        <h3>Top hits</h3>
+        <ul className='list'>
+          <Card details={collectionObject.songs} />
         </ul>
 
-        <h3>Top hits</h3>
-        <ul>
-          {topHits}
+        <h3>Dynamic</h3>
+        <ul className='list'>
+          <Card details={collectionObject.Dynamic} />
         </ul>
 
         <h3>Playlists</h3>
-        <ul>
-          {playlist}
+        <ul className='list'>
+          {collectionObject.playlist}
         </ul>
 
         <h3>Albums</h3>
-        <ul>
-          {albums}
+        <ul className='list'>
+          {collectionObject.albums}
         </ul>
 
         <h3>Other languages</h3>
-        <ul>
-          {language}
+        <ul className='list'>
+          {collectionObject.language}
         </ul>
 
       </div>
