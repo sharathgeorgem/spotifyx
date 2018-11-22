@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactHLS from 'react-hls'
-import data from './tracks.json'
+import data from '../tracks.json'
 
 // App
 class singleTrack extends Component {

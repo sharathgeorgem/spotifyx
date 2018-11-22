@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './collections.css'
+import '../styles/collections.css'
 import shortid from 'shortid'
 import Card from './Card'
 import { Link } from 'react-router-dom'
@@ -17,10 +17,11 @@ const arrayToObject = (array) => {
     obj[item.type].push((
       <div className={item.type} key={item._id}>
         <li>
-          <Link to={{
-            pathname: '/' + item.type,
-            state: item.list
-          }}>
+          <Link style={{ textDecoration: 'none', color: 'inherit' }}
+            to={{
+              pathname: '/' + item.type,
+              state: item.list
+            }}>
             {item.name}
           </Link>
         </li>
