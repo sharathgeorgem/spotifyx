@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
-// import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import axios from 'axios'
 import Collections from './Collections'
+import Albums from './Albums'
+import Playlist from './Playlist'
+import Songs from './Songs'
+import SingleTrack from './SingleTrack'
 
 // App
 class App extends Component {
@@ -26,9 +30,17 @@ class App extends Component {
       <div>
         {!this.state.songCollections && <h1>Not yet</h1>}
         {this.state.songCollections &&
-          <div className='Collection'>
-            <Collections songCollections={this.state.songCollections} />
-          </div>
+          <BrowserRouter>
+            <div className='Collection'>
+              <Route exact path='/' render={props => <Collections songCollections={this.state.songCollections} {...props} />} />
+              <Route path='/language' render={props => <Collections songCollections={this.state.songCollections} {...props} />} />
+              <Route path='/Dynamic' component={Songs} />
+              <Route path='/songs' component={Songs} />
+              <Route exact path='/singleTrack' component={SingleTrack} />
+              <Route path='/albums' component={Albums} />
+              <Route path='/playlist' component={Playlist} />
+            </div>
+          </BrowserRouter>
         }
       </div>
     )

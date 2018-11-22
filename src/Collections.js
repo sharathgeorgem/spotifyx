@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import './Collections.css'
+import './collections.css'
 import shortid from 'shortid'
-import Card from './card'
+import Card from './Card'
+import { Link } from 'react-router-dom'
 
 const arrayToObject = (array) => {
   const accumulator = {
@@ -13,9 +14,17 @@ const arrayToObject = (array) => {
   }
   return array.reduce((obj, item) => {
     item._id = shortid.generate()
-    obj[item.type].push((<div className={item.type} key={item._id} info={item.list}>
-      <li>{item.name}</li>
-    </div>))
+    obj[item.type].push((
+      <div className={item.type} key={item._id}>
+        <li>
+          <Link to={{
+            pathname: '/' + item.type,
+            state: item.list
+          }}>
+            {item.name}
+          </Link>
+        </li>
+      </div>))
     return obj
   }, accumulator)
 }
