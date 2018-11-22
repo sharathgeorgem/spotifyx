@@ -11,41 +11,41 @@
   background: #555; 
 }
 
-.App {
+.Collection {
   text-align: center;
-  width: 80%;
+  width: 100%;
 }
 
-.App ul {
+.Collection ul {
   display: inline;
 }
 
-.App ul .Dynamic li{
+.Collection ul .Dynamic li{
   color: white;
   font-size: 20px;
 }
 
-.App ul .songs li{
+.Collection ul .songs li{
   color: white;
   font-size: 20px;
 }
 
-.App ul .playlist li{
+.Collection ul .playlist li{
   color: white;
   font-size: 20px;
 }
 
-.App ul .albums li{
+.Collection ul .albums li{
   color: white;
   font-size: 20px;
 }
 
-.App ul .language li{
+.Collection ul .language li{
   color: white;
   font-size: 20px;
 }
 
-.App h3 {
+.Collection h3 {
   font-size: 50px;
   display: block;
   text-align: left;

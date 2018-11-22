@@ -3,7 +3,10 @@ import './card.css'
 
 const Card = ({details}) => {
   return (
-    <div>{details}</div>
+    <div>
+      <div>{details}</div>
+      {/* <div>{info}</div> */}
+    </div>
   )
 }
 

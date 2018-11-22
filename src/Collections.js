@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import './Collections.css'
 import shortid from 'shortid'
 import Card from './card'
@@ -14,7 +13,7 @@ const arrayToObject = (array) => {
   }
   return array.reduce((obj, item) => {
     item._id = shortid.generate()
-    obj[item.type].push((<div className={item.type} key={item._id}>
+    obj[item.type].push((<div className={item.type} key={item._id} info={item.list}>
       <li>{item.name}</li>
     </div>))
     return obj
@@ -22,27 +21,11 @@ const arrayToObject = (array) => {
 }
 // Collections
 class Collections extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      songCollections: []
-    }
-  }
-  componentDidMount () {
-    axios.get('https://cors-anywhere.herokuapp.com/https://beatsapi.media.jio.com/v2_1/beats-api/jio/src/response/home/english')
-      .then(response => {
-        let songCollections = response.data.result.data
-        this.setState({
-          songCollections
-        })
-        console.log(songCollections)
-      })
-  }
   render () {
-    const collectionObject = arrayToObject(this.state.songCollections)
-    console.log('The collection object is ', collectionObject)
+    const collectionObject = arrayToObject(this.props.songCollections)
+    console.log('The collection object is ', collectionObject.songs)
     return (
-      <div className='App'>
+      <div className='Collection'>
         <h3>Top hits</h3>
         <ul className='list'>
           <Card details={collectionObject.songs} />
@@ -55,17 +38,17 @@ class Collections extends Component {
 
         <h3>Playlists</h3>
         <ul className='list'>
-          {collectionObject.playlist}
+          <Card details={collectionObject.playlist} />
         </ul>
 
         <h3>Albums</h3>
         <ul className='list'>
-          {collectionObject.albums}
+          <Card details={collectionObject.albums} />
         </ul>
 
         <h3>Other languages</h3>
         <ul className='list'>
-          {collectionObject.language}
+          <Card details={collectionObject.language} />
         </ul>
 
       </div>
