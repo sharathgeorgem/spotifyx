@@ -5,7 +5,6 @@ const Card = ({details}) => {
   return (
     <div>
       <div>{details}</div>
-      {/* <div>{info}</div> */}
     </div>
   )
 }

@@ -26,23 +26,37 @@ class App extends Component {
       })
   }
   render () {
-    return (
-      <div>
-        {!this.state.songCollections && <h1>Not yet</h1>}
-        {this.state.songCollections &&
-          <BrowserRouter>
-            <div className='Collection'>
-              <Route exact path='/' render={props => <Collections songCollections={this.state.songCollections} {...props} />} />
-              <Route path='/language' render={props => <Collections songCollections={this.state.songCollections} {...props} />} />
-              <Route path='/Dynamic' component={Songs} />
-              <Route path='/songs' component={Songs} />
-              <Route exact path='/singleTrack' component={SingleTrack} />
-              <Route path='/albums' component={Albums} />
-              <Route path='/playlist' component={Playlist} />
+    if (!this.state.songCollections.length) {
+      return (
+        <div className='className container'>
+          <div className='preloader-wrapper big active'>
+            <div className='spinner-layer spinner-green'>
+              <div className='circle-clipper left'>
+                <div className='circle' />
+              </div>
+              <div className='gap-patch'>
+                <div className='circle' />
+              </div>
+              <div className='circle-clipper right'>
+                <div className='circle' />
+              </div>
             </div>
-          </BrowserRouter>
-        }
-      </div>
+          </div>
+        </div>
+      )
+    }
+    return (
+      <BrowserRouter>
+        <div className='Collection'>
+          <Route exact path='/' render={props => <Collections songCollections={this.state.songCollections} {...props} />} />
+          <Route path='/language' render={props => <Collections songCollections={this.state.songCollections} {...props} />} />
+          <Route path='/Dynamic' component={Songs} />
+          <Route path='/songs' component={Songs} />
+          <Route path='/singleTrack' component={SingleTrack} />
+          <Route path='/albums' component={Albums} />
+          <Route path='/playlist' component={Playlist} />
+        </div>
+      </BrowserRouter>
     )
   }
 }

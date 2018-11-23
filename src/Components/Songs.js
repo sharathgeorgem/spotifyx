@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Songs extends Component {
   constructor (props) {
@@ -15,18 +16,22 @@ class Songs extends Component {
         return (
           <div key={post.id}>
             <div className='col s12 m7'>
-              <div className='card horizontal gray'>
+              <div className='card horizontal'>
                 <div className='card-image'>
                   <img style={{ maxHeight: '100px', maxWidth: '100px' }} src={'http://jioimages.cdn.jio.com/hdindiamusic/images/' + post.image} alt='Album art' />
                 </div>
                 <div className='card-stacked'>
                   <div className='card-content black'>
-                    <h1 className='header' style={{ fontSize: 'inherit' }}>{post.title}</h1>
+                    <h1 className='header' style={{ fontSize: '20px' }}>
+                      <Link style={{ textDecoration: 'none', color: 'inherit' }}
+                        to={{
+                          pathname: '/singleTrack',
+                          state: post.id
+                        }}>{post.title}
+                      </Link>
+                    </h1>
                     <p>{post.artist}</p>
                   </div>
-                  {/* <div class='card-action'>
-                    <a href='#'>This is a link</a>
-                  </div> */}
                 </div>
               </div>
             </div>
