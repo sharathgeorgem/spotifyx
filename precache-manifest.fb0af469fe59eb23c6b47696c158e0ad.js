@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/spotifyx/static/js/runtime~main.2ee30580.js"
   },
   {
-    "revision": "a6bc68c732178dc3c822",
-    "url": "/spotifyx/static/js/main.a6bc68c7.chunk.js"
+    "revision": "166e3f05c3013fb13d62",
+    "url": "/spotifyx/static/js/main.166e3f05.chunk.js"
   },
   {
     "revision": "f00b9e3adaaf4166db61",
     "url": "/spotifyx/static/js/1.f00b9e3a.chunk.js"
   },
   {
-    "revision": "a6bc68c732178dc3c822",
+    "revision": "166e3f05c3013fb13d62",
     "url": "/spotifyx/static/css/main.cc045cc5.chunk.css"
   },
   {
-    "revision": "c36acf1c270dbcd9540840ff1ab4ebc6",
+    "revision": "9d9184d912de8dcac43d03d9f3fec91d",
     "url": "/spotifyx/index.html"
   }
 ];
