@@ -15,7 +15,7 @@ class App extends Component {
       songCollections: []
     }
   }
-  componentDidMount () {
+  componentDidMount () {// url to config file
     axios.get('https://cors-anywhere.herokuapp.com/https://beatsapi.media.jio.com/v2_1/beats-api/jio/src/response/home/english')
       .then(response => {
         let songCollections = response.data.result.data
@@ -46,7 +46,7 @@ class App extends Component {
       )
     }
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className='Collection'>
           <Route exact path='/' render={props => <Collections songCollections={this.state.songCollections} {...props} />} />
           <Route path='/language' render={props => <Collections songCollections={this.state.songCollections} {...props} />} />

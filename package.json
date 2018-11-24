@@ -9,11 +9,11 @@
     "react-dom": "^16.6.1",
     "react-hls": "0.0.8",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.1",
     "shortid": "^2.2.14"
   },
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.0.1",
+    "react-scripts": "^2.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
