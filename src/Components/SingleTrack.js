@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactHLS from 'react-hls'
+import FilePlayer from 'react-player/lib/players/FilePlayer'
 import axios from 'axios'
 
 // App
@@ -38,25 +38,30 @@ class singleTrack extends Component {
     let {trackId} = this.state
     console.log('Album and track ', album, track)
     const songdetail = songDetails ? (
-      <div>
+      <div className='contain'>
         <div className='card'>
           <div className='card-image waves-effect waves-block waves-light'>
             <img className='activator' src={'http://jioimages.cdn.jio.com/hdindiamusic/images/' + songDetails.imageurl} alt='Album art' />
           </div>
           <div className='card-content'>
             <span className='card-title activator grey-text text-darken-4'>{songDetails.songtitle}</span>
+            <FilePlayer
+              url={'https://cors-anywhere.herokuapp.com/http://jiobeats.cdn.jio.com/mod/_definst_/mp4:hdindiamusic/audiofiles/' + album + '/' + track + '/' + trackId + '_320.mp4/playlist.m3u8'}
+              controls
+              height='60px'
+              width='100%'
+              config={{
+                file: {
+                  forceAudio: true
+                }
+              }}
+              playing
+            />
           </div>
           <div className='card-reveal'>
-            <span className='card-title grey-text text-darken-4'>{songDetails.songtitle}<i className='material-icons right'>close</i></span>
-            <p>{songDetails.artist}</p>
-            <p>{songDetails.albumname}</p>
+            <span className='card-title grey-text text-darken-4'>Card Title<i className='material-icons right'>close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
           </div>
-          <ReactHLS
-            height='40'
-            width='280'
-            url={'https://cors-anywhere.herokuapp.com/http://jiobeats.cdn.jio.com/mod/_definst_/mp4:hdindiamusic/audiofiles/' + album + '/' + track + '/' + trackId + '_320.mp4/playlist.m3u8'}
-            controls
-          />
         </div>
       </div>
     ) : (
