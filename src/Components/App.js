@@ -15,7 +15,7 @@ class App extends Component {
       songCollections: []
     }
   }
-  componentDidMount () {// url to config file
+  componentDidMount () { // url to config file
     axios.get('https://cors-anywhere.herokuapp.com/https://beatsapi.media.jio.com/v2_1/beats-api/jio/src/response/home/english')
       .then(response => {
         let songCollections = response.data.result.data
@@ -28,16 +28,14 @@ class App extends Component {
   render () {
     if (!this.state.songCollections.length) {
       return (
-        <div className='className container'>
-          <div className='preloader-wrapper big active'>
-            <div className='spinner-layer spinner-green'>
+        <div className='className container' style={{position: 'fixed', top: '50%', left: '50%'}}>
+          <div className='preloader-wrapper small active'>
+            <div className='spinner-layer spinner-green-only'>
               <div className='circle-clipper left'>
                 <div className='circle' />
-              </div>
-              <div className='gap-patch'>
+              </div><div className='gap-patch'>
                 <div className='circle' />
-              </div>
-              <div className='circle-clipper right'>
+              </div><div className='circle-clipper right'>
                 <div className='circle' />
               </div>
             </div>

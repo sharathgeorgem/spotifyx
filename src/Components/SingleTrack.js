@@ -38,7 +38,7 @@ class singleTrack extends Component {
     let {trackId} = this.state
     console.log('Album and track ', album, track)
     const songdetail = songDetails ? (
-      <div className='contain'>
+      <div className='className container'>
         <div className='card'>
           <div className='card-image waves-effect waves-block waves-light'>
             <img className='activator' src={'http://jioimages.cdn.jio.com/hdindiamusic/images/' + songDetails.imageurl} alt='Album art' />
@@ -65,16 +65,14 @@ class singleTrack extends Component {
         </div>
       </div>
     ) : (
-      <div className='className container'>
-        <div className='preloader-wrapper big active'>
-          <div className='spinner-layer spinner-green'>
+      <div className='className container' style={{position: 'fixed', top: '50%'}}>
+        <div className='preloader-wrapper small active'>
+          <div className='spinner-layer spinner-green-only'>
             <div className='circle-clipper left'>
               <div className='circle' />
-            </div>
-            <div className='gap-patch'>
+            </div><div className='gap-patch'>
               <div className='circle' />
-            </div>
-            <div className='circle-clipper right'>
+            </div><div className='circle-clipper right'>
               <div className='circle' />
             </div>
           </div>
